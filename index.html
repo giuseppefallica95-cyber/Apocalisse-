@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Sacro Impero — World Wiki</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigazione principale">
+      <div class="brand">
+        <div class="brand-mark">SI</div>
+        <div>
+          <h1 id="brand-title">Sacro Impero</h1>
+          <p>World Wiki</p>
+        </div>
+      </div>
+
+      <label class="search-wrap">
+        <span>Cerca</span>
+        <input id="global-search" type="search" placeholder="Nome, tag, testo…" autocomplete="off" />
+      </label>
+
+      <nav class="nav-list">
+        <button class="nav-btn active" data-view="home">Panoramica</button>
+        <button class="nav-btn" data-view="map">Mappa</button>
+        <button class="nav-btn" data-view="timeline">Timeline</button>
+        <button class="nav-btn" data-view="encyclopedia">Enciclopedia</button>
+        <button class="nav-btn" data-view="relations">Relazioni</button>
+      </nav>
+
+      <div class="side-block">
+        <div class="row-between">
+          <span class="side-label">Modalità</span>
+          <button id="mode-toggle" class="mode-toggle" type="button">DM</button>
+        </div>
+        <p class="side-help">PLAYER nasconde le voci riservate; DM mostra tutto.</p>
+      </div>
+
+      <div class="side-block">
+        <span class="side-label">Stato canone</span>
+        <div class="legend compact">
+          <span class="badge canon">CANON</span>
+          <span class="badge draft">DRAFT</span>
+          <span class="badge rumor">RUMOR</span>
+          <span class="badge secret">SECRET</span>
+          <span class="badge retcon">RETCON</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">WORLD BIBLE</p>
+          <h2 id="view-title">Panoramica</h2>
+        </div>
+        <div class="top-actions">
+          <button id="export-btn" class="secondary-btn" type="button">Esporta JSON</button>
+        </div>
+      </header>
+
+      <section id="search-results" class="search-results hidden" aria-live="polite"></section>
+      <section id="view-root"></section>
+    </main>
+  </div>
+
+  <dialog id="entry-dialog">
+    <article class="dialog-card">
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Chiudi">×</button>
+      <div id="dialog-content"></div>
+    </article>
+  </dialog>
+
+  <script src="data/world.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
